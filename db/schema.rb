@@ -10,6 +10,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2020_04_07_101458) do
+
+  create_table "centres", force: :cascade do |t|
+    t.string "adresse"
+    t.integer "telephone"
+    t.text "info_diverses"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_centres_on_user_id"
+  end
+
+  create_table "slots", force: :cascade do |t|
+    t.date "date"
+    t.time "h_debut"
+    t.time "h_fin"
+    t.string "type_mission"
+    t.text "consignes"
+    t.integer "user_id"
+    t.integer "center_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["center_id"], name: "index_slots_on_center_id"
+    t.index ["user_id"], name: "index_slots_on_user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "prenom"
+    t.string "nom"
+    t.string "email"
+    t.integer "telephone"
+    t.boolean "statut_admin_benevole"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end

@@ -1,0 +1,8 @@
+<h1><%= @centre.adresse %></h1>
+
+<%= link_to 'Back', centre_path %>
+<%= link_to 'Edit', edit_centre_path(@centre) %>
+<%= link_to 'Delete', centre_path(@centre), method: :delete, data: { confirm: "Are you sure?" } %>
+
+
+
