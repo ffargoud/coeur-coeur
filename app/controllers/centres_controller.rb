@@ -32,7 +32,7 @@ class CentresController < ApplicationController
   private
 
   def centre_params
-    params.require(:centre).permit(:adresse, :telephone, :info_diverses)
+    params.require(:centre).permit(:name, :adresse, :telephone, :info_diverses)
   end
 
   def find_centre
