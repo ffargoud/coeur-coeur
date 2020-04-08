@@ -1,5 +1,5 @@
 <h1> Tous nos centres de distribution</h1>
-<% link_to 'Create a new centre', new_centre_path %>
+<%= link_to 'Créer un nouveau centre', new_centre_path %>
 <%  @centres.each do |centre| %>
   <h5><%= link_to centre.adresse centre_path(centre) %>
 <% end %>
