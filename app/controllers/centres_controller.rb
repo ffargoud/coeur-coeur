@@ -1,5 +1,6 @@
 class CentresController < ApplicationController
   before_action :find_centre, only: [:show, :edit, :destroy]
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     @centres = Centre.all
