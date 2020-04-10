@@ -2,12 +2,12 @@
   <div class="row">
     <div class ="col-sn-4 col-sn-offset-4">
 
-<%= simple_form_for(@centre) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :adresse %>
-  <%= f.input :telephone %>
-  <%= f.input :info_diverses %>
-  <%= f.submit %>
+<%= simple_form_for([@user, @centre]) do |f| %>
+  <%= f.input :name, :label => "Nom du centre" %>
+  <%= f.input :adresse, :label => "Adresse" %>
+  <%= f.input :telephone, :label => "Numéro de téléphone" %>
+  <%= f.input :info_diverses, :laber => "Infos diverse"  %>
+  <%= f.submit "Créer un centre" %>
 <% end %>
 
     </div>
