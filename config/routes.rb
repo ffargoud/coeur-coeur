@@ -18,8 +18,10 @@ Rails.application.routes.draw do
   # Udpate a user (admin & user)
   # Delete a user (admin)
 
-  resources :centres
+
+  resources :centres do
+    resources :slots
+  end
   resources :users
-  resources :slots
 
 end
