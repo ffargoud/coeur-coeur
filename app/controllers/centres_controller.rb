@@ -1,20 +1,27 @@
 class CentresController < ApplicationController
-  before_action :find_centre, only: [:show, :edit, :destroy]
+  before_action :find_centre, only: [:show, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_after_action :verify_authorized, only: [:index]
 
   def index
-    @centres = Centre.all
+    # @centres = Centre.all
+    @centres = policy_scope(Centre)
   end
 
-  def show; end
+  def show
+    find_centre
+  end
 
   def new
     @centre = Centre.new
+    authorize @centre
   end
 
   def create
     @centre = Centre.new(centre_params)
     @centre.user = current_user
+    authorize @centre
+
     if @centre.save
       redirect_to centre_path(@centre) # To validate onces routes are done
     else
@@ -22,14 +29,18 @@ class CentresController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+    find_centre
+  end
 
   def update
+    find_centre
     @centre.update(centre_params)
     redirect_to centre_path(@centre)
   end
 
   def destroy
+    find_centre
     @centre.destroy
     redirect_to centre_path
   end
@@ -42,5 +53,6 @@ class CentresController < ApplicationController
 
   def find_centre
     @centre = Centre.find(params[:id])
+    authorize @centre
   end
 end
