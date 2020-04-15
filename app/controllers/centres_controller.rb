@@ -14,8 +14,12 @@ class CentresController < ApplicationController
 
   def create
     @centre = Centre.new(centre_params)
-    @centre.save
-    redirect_to centre_path(@centre) # To validate onces routes are done
+    @centre.user = current_user
+    if @centre.save
+      redirect_to centre_path(@centre) # To validate onces routes are done
+    else
+      render "new"
+    end
   end
 
   def edit; end
