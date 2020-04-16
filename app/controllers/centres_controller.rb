@@ -23,7 +23,7 @@ class CentresController < ApplicationController
     authorize @centre
 
     if @centre.save
-      redirect_to centre_path(@centre) # To validate onces routes are done
+      redirect_to centres_path
     else
       render "new"
     end

@@ -1,56 +1,6 @@
 // Specific CSS for your home-page
-.cards {
-  display: flex;
-  justify-content: space-between;
-}
 
-.centres-card {
-  overflow: hidden;
-  background: white;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  width: 400px;
-  height: 325px;
-  margin: 20px;
-  display: inline-block;
-  border-radius: 4px;
-  &:hover {
-    box-shadow: 2px 2px 15px 5px rgba(0,0,0,0.2);
-  }
-}
-
-.centres-card > img {
-  height: 200px;
-  width: 100%;
-  object-fit: cover;
-}
-
-.centres-card h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-  margin-bottom: 4px;
-}
-
-.centres-card .restaurant-name {
-  margin-left: 10px;
-  color: #D94630;
-}
-
-.centres-card p {
-  font-size: 12px;
-  opacity: .7;
-  margin: 0;
-}
-
-
-.centres-card .centres-card-infos {
-  padding: 16px;
-  padding-top: 8px;
-  padding-bottom: 2px;
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-
-  text-decoration: none;
-  color: black;
+h1 {
+  font-size: 32px;
+  margin-bottom: 40px;
 }
