@@ -1,23 +1,22 @@
 <h1> Tous nos centres de distribution</h1>
 
-    <%= link_to 'Créer un nouveau centre', new_centre_path %>
-
-<div class="cards">
+<div class="cards-grid">
   <% @centres.each do |centre| %>
-  <%= link_to centre_path(centre.id), class: "centre-card" do %>
-    <div class="centres-card">
-     <% if false %>
-        <%= cl_image_tag centre.photo.key %>
-        <% else %>
-        <%= image_tag "https://res.cloudinary.com/dnie1qfbq/image/upload/v1582631708/samples/food/pot-mussels.jpg", height: 300, width: 400, crop: :fill %>
-        <% end %>
+    <%= link_to centre_path(centre.id), class: "centre-card" do %>
+      <%= image_tag "https://www.ville-erquy.com/wp-content/uploads/logo-les-restaurants-du-coeur-800x450.jpg" %>
       <div class="centre-card-info">
-        <div>
-          <h2 class='centre-name'><%= centre.name %></h2>
-          <p> <%= centre.adresse %></p>
-        </div>
+        <h2 class='centre-name'><%= centre.name %></h2>
+        <p> <%= centre.adresse %></p>
+        <p> <%= centre.telephone %></p>
       </div>
     <% end %>
+  <% end %>
+  <%= link_to new_centre_path, class: "centre-card" do %>
+    <%= image_tag "https://www.ville-erquy.com/wp-content/uploads/logo-les-restaurants-du-coeur-800x450.jpg" %>
+    <div class="centre-card-info">
+      <h2>Créer un nouveau centre</h2>
+      <i class="fas fa-plus-square"></i>
+    </div>
   <% end %>
 </div>
 
