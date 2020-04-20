@@ -1,8 +1,10 @@
 <h1><%= @centre.name %></h1>
 
 <%= link_to 'Retour', centres_path %>
+<% if user_signed_in? %>
 <%= link_to 'Modifier', edit_centre_path(@centre) %>
 <%= link_to 'Supprimer', centre_path(@centre), method: :delete, data: { confirm: "Are you sure?" } %>
+<% end %>
 
 
 
