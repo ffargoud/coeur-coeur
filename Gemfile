@@ -11,6 +11,8 @@ gem 'simple_form'
 gem 'devise'
 gem 'pundit'
 
+gem 'rails_refactor'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.4', '>= 5.2.4.2'
 # Use sqlite3 as the database for Active Record

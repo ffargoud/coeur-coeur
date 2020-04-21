@@ -7,14 +7,63 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
+    <%= f.input :prenom,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "prenom" }%>
+
+    <%= f.input :nom,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "nom" }%>
+
+
+
+    <%= f.input :pays,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "pays" }%>
+
+    <%= f.input :numero_et_voie,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "numero_et_voie" }%>
+
+    <%= f.input :code_postal,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "code_postal" }%>
+
+    <%= f.input :ville,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "ville" }%>
+
+    <%= f.input :date_de_naissance,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "date_de_naissance" }%>
+
+    <%= f.input :nationalite,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "nationalite" }%>
+
+    <%= f.input :numero,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "numero" }%>
+
     <%= f.input :email,
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "email" }%>
+
     <%= f.input :password,
                 required: true,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                 input_html: { autocomplete: "new-password" } %>
+
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
