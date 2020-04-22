@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root to: "centres#index"
   devise_for :users, :controllers => { registrations: 'users/registrations' }
+    resources :users
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   # Read all the centres (all)
   # Read one centre (all)
@@ -21,6 +23,6 @@ Rails.application.routes.draw do
   resources :centres do
     resources :slots
   end
-  resources :users
+
 
 end
