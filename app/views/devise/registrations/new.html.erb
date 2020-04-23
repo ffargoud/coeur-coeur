@@ -17,8 +17,6 @@
                 autofocus: true,
                 input_html: { autocomplete: "nom" }%>
 
-
-
     <%= f.input :pays,
                 required: true,
                 autofocus: true,
@@ -39,7 +37,7 @@
                 autofocus: true,
                 input_html: { autocomplete: "ville" }%>
 
-    <%= f.input :date_de_naissance,
+    <%= f.input :date_de_naissance, as: :string,
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "date_de_naissance" }%>
@@ -49,7 +47,7 @@
                 autofocus: true,
                 input_html: { autocomplete: "nationalite" }%>
 
-    <%= f.input :numero,
+    <%= f.input :numero, as: :string,
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "numero" }%>

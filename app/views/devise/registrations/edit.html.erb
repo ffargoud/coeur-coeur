@@ -1,24 +1,83 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="container">
+  <div class="row">
+    <div class ="col-sn-4 col-sn-offset-4">
+
+      <h2>Mes informations <%= resource_name.to_s.humanize %></h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
+    <%= f.input :email, required: true, autofocus: true, placeholder: "Email" %>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
+    <%= f.input :prenom,
+                required: false,
+                autofocus: true,
+                placeholder: "Prénom",
+                input_html: { autocomplete: "Prénom" }%>
+
+    <%= f.input :nom,
+                required: false,
+                autofocus: true,
+                placeholder: "Nom",
+                input_html: { autocomplete: "nom" }%>
+
+    <%= f.input :numero, as: :string,
+                required: false,
+                autofocus: true,
+                placeholder: "+33600300300",
+                input_html: { autocomplete: "numero" }%>
+
+    <%= f.input :numero_et_voie,
+                required: true,
+                autofocus: true,
+                placeholder: "162 Boulevard de Magenta",
+                input_html: { autocomplete: "numero_et_voie" }%>
+
+    <%= f.input :code_postal,
+                required: true,
+                autofocus: true,
+                placeholder: "75010",
+                input_html: { autocomplete: "code_postal" }%>
+
+    <%= f.input :ville,
+                required: true,
+                autofocus: true,
+                placeholder: "Paris",
+                input_html: { autocomplete: "ville" }%>
+
+    <%= f.input :pays,
+                required: true,
+                autofocus: true,
+                placeholder: "France",
+                input_html: { autocomplete: "pays" }%>
+
+    <%= f.input :date_de_naissance, as: :string,
+                required: true,
+                autofocus: true,
+                placeholder: "03/10/1993",
+                input_html: { autocomplete: "date_de_naissance" }%>
+
+    <%= f.input :nationalite,
+                required: true,
+                autofocus: true,
+                placeholder: "Française",
+                input_html: { autocomplete: "nationalite" }%>
 
     <%= f.input :password,
-                hint: "leave it blank if you don't want to change it",
+                hint: "Laissez ce champ vide si vous ne souhaitez pas modifier votre mot de passe",
                 required: false,
                 input_html: { autocomplete: "new-password" } %>
+
     <%= f.input :password_confirmation,
                 required: false,
                 input_html: { autocomplete: "new-password" } %>
+
     <%= f.input :current_password,
-                hint: "we need your current password to confirm your changes",
+                hint: "Nous avons besoin de votre mot de passe pour effectuer les changements",
                 required: true,
                 input_html: { autocomplete: "current-password" } %>
   </div>
@@ -27,9 +86,13 @@
     <%= f.button :submit, "Modifier" %>
   </div>
 <% end %>
+<br>
 
-<h3>Supprimer mon compte</h3>
-
-<p>Unhappy? <%= link_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Vous êtes sûr(e) ?" }, method: :delete %></p>
+<p><%= link_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Vous êtes sûr(e) ?" }, method: :delete %></p>
 
 <%= link_to "Retour", :back %>
+
+    </div>
+  </div>
+</div>
+

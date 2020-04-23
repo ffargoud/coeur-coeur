@@ -21,7 +21,7 @@
             <%= button_tag "Mon profil", class: "btn btn-flat", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
               <div id= "dropdown" class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                 <p class="dropdown-item" >
-                  <%= link_to "Mes infos", users_path, class: "dropdown-item" %>
+                  <%= link_to "Mes infos", edit_user_registration_path, class: "dropdown-item" %>
                 </p>
                 <p class="dropdown-item" >
                   <%= link_to "Trouver un centre", "/centres", class: "dropdown-item" %>
